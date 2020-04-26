@@ -1,0 +1,67 @@
+<resources>
+    <string name="app_name">Arsenal Fc</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_players_detail">PlayersDetail</string>
+
+    <string name="goal_keeper">GK</string>
+    <string name="central_defender">CD</string>
+    <string name="left_defender">LD</string>
+    <string name="right_defender">RD</string>
+    <string name="central_midfielder">CMF</string>
+    <string name="left_forward">CF</string>
+    <string name="left_midfielder">LMF</string>
+    <string name="striker">S</string>
+    <string name="right_midfielder">RMF</string>
+
+    <string name="p1">Ashley Cole</string>
+    <string name="p2">Emmanuel Adebayor</string>
+    <string name="p3">Bacary Sagna</string>
+    <string name="p4">Nicklas Bendtner</string>
+    <string name="p5">David Seaman</string>
+    <string name="p6">Dennis Bergkamp</string>
+    <string name="p7">Cesc Fabregas</string>
+    <string name="p8">Gaël Clichy</string>
+    <string name="p9">Granit Xhaka</string>
+    <string name="p10">Jack Wilshere</string>
+    <string name="p11">Jens Lehmann</string>
+    <string name="p12">Manuel Almunia</string>
+    <string name="p13">Nacho Monreal</string>
+    <string name="p14">Robert Pires</string>
+    <string name="p15">Sol Campbell</string>
+    <string name="p16">Thierry Henry</string>
+    <string name="p17">Tomas Rosicky</string>
+    <string name="p18">Tony Adams</string>
+    <string name="p19">Patrick Vieira</string>
+
+    <string name="dp1">Ashley Cole is an English professional footballer who plays as a left back for Championship club Derby County. Cole is considered by many critics and fellow professional players as one of the best defenders of his generation, and by some, for the better part of his career, as the best left back in the world</string>
+    <string name="dp2">Sheyi Emmanuel Adebayor is a Togolese professional footballer who plays as a striker for Turkish club İstanbul Başakşehir. He previously played for English clubs Arsenal, Manchester City, Tottenham Hotspur and Crystal Palace, as well as French side Metz, and Monégasque team Monaco and Spanish team Real Madrid</string>
+    <string name="dp3">Bacary Sagna; born 14 February 1983 is a French professional footballer who currently plays for Major League Soccer club Montreal Impact. He has mainly played in the Premier League, and also for the France national team</string>
+    <string name="dp4">Nicklas Bendtner is a Danish professional footballer who plays as a forward for Eliteserien club Rosenborg and the Denmark national team. His preferred position is centre-forward, but he has also played on the right side of attack, and occasionally on the left</string>
+    <string name="dp5">David Andrew Seaman, MBE is an English former footballer who played as a goalkeeper. In a career lasting from 1981 to 2004, he is best known for his time playing for Arsenal. He won 75 caps for the England national football team, and is the country\'s second-most capped goalkeeper, after Peter Shilton</string>
+    <string name="dp6">Dennis Nicolaas Maria Bergkamp is a Dutch former professional footballer, who until 21 December 2017 was the assistant manager at Ajax. Originally a wide midfielder, Bergkamp was moved to main striker and then to second striker, where he remained throughout his playing career</string>
+    <string name="dp7">Francesc Cesc Fàbregas Soler is a Spanish professional footballer who plays as a central midfielder for Ligue 1 club Monaco and the Spain national team. Fàbregas came through La Masia, Barcelona\'s youth academy, leaving at 16 when he was signed by Premier League club Arsenal in September 2003</string>
+    <string name="dp8">Gaël Dimitri Clichy is a French professional footballer who currently plays for Turkish club İstanbul Başakşehir in the Süper Lig. He has also played for the France national team</string>
+    <string name="dp9">Granit Xhaka is a Swiss professional footballer who plays as a midfielder for Premier League club Arsenal and the Switzerland national team. Xhaka began his career at hometown club Basel, winning the Swiss Super League in each of his first two seasons</string>
+    <string name="dp10">Jack Andrew Garry Wilshere is an English professional footballer who plays as a midfielder for Premier League club West Ham United and the English national team. Wilshere came up through Arsenal\'s youth academy and impressed from an early age</string>
+    <string name="dp11">Jens Gerhard Lehmann is a retired German footballer who played as a goalkeeper. He was voted UEFA Club Goalkeeper of the Year for the 1996–97 and 2005–06 seasons, and was selected for three World Cup squads</string>
+    <string name="dp12">Manuel Almunia Rivero is a Spanish retired footballer who played as a goalkeeper. He competed mainly in the Spanish lower leagues in his early years, only appearing in 26 La Liga games over the course of two seasons with Recreativo and Albacete, after starting out at Osasuna</string>
+    <string name="dp13">Ignacio Nacho Monreal Eraso is a Spanish professional footballer who plays as a left back or centre back for Premier League club Arsenal and the Spain national team. He started playing with Osasuna in 2005, going on to appear in 144 official games over the course of five La Liga seasons</string>
+    <string name="dp14">Robert Emmanuel Pires is a French football coach and former professional player. Pires played for French clubs Metz and Marseille prior to his time with Arsenal, where he won two FA Cups and two Premier League titles including the club\'s unbeaten season of 2003–04</string>
+    <string name="dp15">Sulzeer Jeremiah Campbell (born 18 September 1974) is an English professional football manager and former player who is the manager of League Two club Macclesfield Town. A centre back, he had a 20-year career playing in the Premier League and an 11-year international career with the England national team</string>
+    <string name="dp16">Thierry Daniel Henry is a French professional football coach and former player who was most recently the manager of Ligue 1 club Monaco</string>
+    <string name="dp17">Tomáš Rosický is a Czech former professional footballer who was the captain of the Czech Republic national team for a ten-year period. He played club football for Sparta Prague, Borussia Dortmund and Arsenal. He was nicknamed \"the little Mozart\" for his ability to \"orchestrate\" the midfield</string>
+    <string name="dp18">Tony Alexander Adams MBE is an English football manager. As a player, Adams played for Arsenal and England, captaining both teams. Adams spent his entire playing career of 22 years as a centre back at Arsenal</string>
+    <string name="dp19">Patrick Vieira is a French professional football head coach and former player. He is the manager of Nice. Considered one of the best players of his generation, Vieira began his career at Cannes in 1994, where several standout performances in his debut season garnered him a move to Serie A club Milan a year later</string>
+
+
+
+
+
+
+
+
+
+
+
+
+</resources>

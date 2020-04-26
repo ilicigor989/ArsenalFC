@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".PlayersDetail"
+    tools:showIn="@layout/activity_players_detail"
+    android:orientation="vertical"
+    android:background="@drawable/upshot">
+
+
+        <ImageView
+            android:layout_margin="5dp"
+            android:id="@+id/bigPicture"
+            android:layout_gravity="center"
+            android:layout_height="350dp"
+            android:layout_width="350dp" />
+
+        <LinearLayout
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            android:background="#C10505"
+            >
+
+        <TextView
+            android:textColor="#ffffff"
+            android:id="@+id/fullName"
+            android:textSize="30sp"
+            android:layout_width="325dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            />
+
+        <TextView
+            android:textColor="#ffffff"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_width="70dp"
+            android:textSize="30sp"
+            android:layout_height="50dp"
+            android:id="@+id/position"
+            />
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_margin="5dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:background="@drawable/top">
+
+        <TextView
+            android:textColor="#ffffff"
+            android:id="@+id/description"
+            android:layout_margin="5dp"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            />
+
+</LinearLayout>
+
+
+
+</LinearLayout>
