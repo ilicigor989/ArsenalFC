@@ -22,18 +22,15 @@
             android:id="@+id/text1"
             android:textSize="30sp"
             android:layout_height="50dp"
-            android:layout_width="match_parent"
-            />
+            android:layout_width="match_parent" />
 
         <TextView
             android:id="@+id/text2"
             android:textSize="30sp"
             android:layout_height="50dp"
-            android:layout_width="match_parent"/>
+            android:layout_width="match_parent" />
 
     </LinearLayout>
-
-
 
 
 </LinearLayout>

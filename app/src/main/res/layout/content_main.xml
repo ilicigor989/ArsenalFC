@@ -16,8 +16,7 @@
         android:layout_height="match_parent"
         android:background="@drawable/arsenal2"
         android:backgroundTint="#90FFFFFF"
-        android:backgroundTintMode="src_over"
-        />
+        android:backgroundTintMode="src_over" />
 
 
 </LinearLayout>

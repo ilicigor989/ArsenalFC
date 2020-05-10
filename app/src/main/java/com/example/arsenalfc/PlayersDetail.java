@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.transition.ChangeBounds;
 import android.transition.Transition;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,6 +18,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class PlayersDetail extends AppCompatActivity {
 
@@ -28,13 +32,11 @@ public class PlayersDetail extends AppCompatActivity {
     TextView fullNameTextView;
     TextView positionTextView;
     Button submitButton;
-    Player player;
+    ArrayList<Player> listPlayers;
 
     public static final String INTENT_TAG_PLAYER_NAME = "new_player_name";
     public static final String INTENT_TAG_PLAYER_POSITION = "new_player_position";
     public static final String INTENT_TAG_PLAYER_DESCRIPTION = "new_player_description";
-    int serilaNumber;
-
 
 
     @Override
@@ -45,12 +47,15 @@ public class PlayersDetail extends AppCompatActivity {
         setSupportActionBar(toolbar);
         editDialog = new Dialog(this);
 
+        listPlayers = SingletonList.getInstance().getArrayList();
+
+
         Intent intent = getIntent();
-        player = intent.getParcelableExtra("player");
+
         String imageTransitionName = intent.getStringExtra(RecyclerViewAdapter.EXTRA_IMAGE_TRANSITION_NAME);
         String nameTransitionName = intent.getStringExtra(RecyclerViewAdapter.EXTRA_NAME_TRANSITION_NAME);
         String positionTransitionName = intent.getStringExtra(RecyclerViewAdapter.EXTRA_POSITION_TRANSITION_NAME);
-        serilaNumber=intent.getIntExtra("serial number",0);
+
 
         descriptionTextView = findViewById(R.id.description);
         fullNameTextView = findViewById(R.id.fullName);
@@ -61,13 +66,16 @@ public class PlayersDetail extends AppCompatActivity {
 
         mainImage.setTransitionName(imageTransitionName);
 
-        fullNameTextView.setText(player.getName());
-        descriptionTextView.setText(player.getDescription());
-        positionTextView.setText(player.getPosition());
+        fullNameTextView.setText(listPlayers.get(RecyclerViewAdapter.serialNumber).getName());
+        descriptionTextView.setText(listPlayers.get(RecyclerViewAdapter.serialNumber).getDescription());
+        positionTextView.setText(listPlayers.get(RecyclerViewAdapter.serialNumber).getPosition());
 
         BitmapFactory.Options bmOptions = new BitmapFactory.Options();
-        Bitmap bitmap = BitmapFactory.decodeFile(player.getBitmapPath(), bmOptions);
+        Bitmap bitmap = BitmapFactory.decodeFile(listPlayers.get(RecyclerViewAdapter.serialNumber).getBitmapPath(), bmOptions);
         mainImage.setImageBitmap(bitmap);
+
+        Toast.makeText(this, "This is my number" + RecyclerViewAdapter.serialNumber,
+                Toast.LENGTH_LONG).show();
     }
 
     @Override
@@ -95,8 +103,7 @@ public class PlayersDetail extends AppCompatActivity {
             changeDescription = editDialog.findViewById(R.id.changeDescription);
 
             titleText = (TextView) editDialog.findViewById(R.id.title);
-            titleText.setText("Edit " + player.getName());
-
+            titleText.setText("Edit " + listPlayers.get(RecyclerViewAdapter.serialNumber).getName());
 
 
             editDialog.show();
@@ -104,12 +111,12 @@ public class PlayersDetail extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     if (changeName.getText().toString().trim().length() != 0
-                            &&changePosition.getText().toString().trim().length() != 0
-                            &&changeDescription.getText().toString().trim().length() != 0) {
+                            && changePosition.getText().toString().trim().length() != 0
+                            && changeDescription.getText().toString().trim().length() != 0) {
 
-                        player.setName(changeName.getText().toString());
-                        player.setPosition(changePosition.getText().toString());
-                        player.setDescription(changeDescription.getText().toString());
+                        listPlayers.get(RecyclerViewAdapter.serialNumber).setName(changeName.getText().toString());
+                        listPlayers.get(RecyclerViewAdapter.serialNumber).setPosition(changePosition.getText().toString());
+                        listPlayers.get(RecyclerViewAdapter.serialNumber).setDescription(changeDescription.getText().toString());
 
                         Intent intent = new Intent(getBaseContext(), MainActivity.class);
 
@@ -119,15 +126,15 @@ public class PlayersDetail extends AppCompatActivity {
 
                         intent.putExtra(INTENT_TAG_PLAYER_DESCRIPTION, changeDescription.getText().toString());
 
-                        intent.putExtra("number",serilaNumber);
+                        intent.putExtra("number", RecyclerViewAdapter.serialNumber);
 
                         setResult(RESULT_OK, intent);
                     }
 
                     editDialog.dismiss();
-                    fullNameTextView.setText(player.getName());
-                    descriptionTextView.setText(player.getDescription());
-                    positionTextView.setText(player.getPosition());
+                    fullNameTextView.setText(listPlayers.get(RecyclerViewAdapter.serialNumber).getName());
+                    descriptionTextView.setText(listPlayers.get(RecyclerViewAdapter.serialNumber).getDescription());
+                    positionTextView.setText(listPlayers.get(RecyclerViewAdapter.serialNumber).getPosition());
 
                 }
 
@@ -138,6 +145,7 @@ public class PlayersDetail extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
     private ChangeBounds enterTransition() {
         ChangeBounds bounds = new ChangeBounds();
         bounds.setDuration(2000);

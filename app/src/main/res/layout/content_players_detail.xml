@@ -11,22 +11,21 @@
     android:background="@drawable/upshot">
 
 
-        <ImageView
-            android:layout_margin="5dp"
-            android:id="@+id/bigPicture"
-            android:layout_gravity="center"
-            android:layout_height="350dp"
-            android:layout_width="350dp" />
+    <ImageView
+        android:layout_margin="5dp"
+        android:id="@+id/bigPicture"
+        android:layout_gravity="center"
+        android:layout_height="350dp"
+        android:layout_width="350dp" />
 
-        <LinearLayout
-            android:layout_marginRight="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:orientation="horizontal"
-            android:background="#C10505"
-            >
+    <LinearLayout
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:background="#C10505">
 
         <TextView
             android:textColor="#ffffff"
@@ -34,8 +33,7 @@
             android:textSize="30sp"
             android:layout_width="325dp"
             android:layout_height="50dp"
-            android:layout_margin="5dp"
-            />
+            android:layout_margin="5dp" />
 
         <TextView
             android:textColor="#ffffff"
@@ -45,17 +43,16 @@
             android:layout_width="70dp"
             android:textSize="30sp"
             android:layout_height="50dp"
-            android:id="@+id/position"
-            />
-        </LinearLayout>
+            android:id="@+id/position" />
+    </LinearLayout>
 
-        <LinearLayout
+    <LinearLayout
 
-            android:layout_width="match_parent"
-            android:layout_margin="5dp"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:background="@drawable/top">
+        android:layout_width="match_parent"
+        android:layout_margin="5dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:background="@drawable/top">
 
         <TextView
             android:textColor="#ffffff"
@@ -64,11 +61,9 @@
             android:textSize="18sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            />
+            android:layout_marginLeft="5dp" />
 
-</LinearLayout>
-
+    </LinearLayout>
 
 
 </LinearLayout>

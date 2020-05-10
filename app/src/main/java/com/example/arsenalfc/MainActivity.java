@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
     private static final int REQUEST_CODE = 1;
     int playerPosition;
     String myCurrentFilePath;
-    ImageView rv_imageView ;
+    ImageView rv_imageView;
 
 
     @Override
@@ -79,8 +79,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerView);
         LayoutInflater inflater = LayoutInflater.from(this);
         View viewMyLayout = inflater.inflate(R.layout.list_item, null);
-        rv_imageView=viewMyLayout.findViewById(R.id.item_imageview);
-
+        rv_imageView = viewMyLayout.findViewById(R.id.item_imageview);
 
 
         sdCard = Environment.getExternalStorageDirectory();
@@ -133,7 +132,9 @@ public class MainActivity extends AppCompatActivity {
             Player Vieira = new Player(getString(R.string.p19), getString(R.string.central_midfielder), getString(R.string.dp19), getPicturePath("Patrick Vieira"));
             myListPlayers.add(Vieira);
 
-            recyclerViewAdapter = new RecyclerViewAdapter(myListPlayers,getBaseContext());
+            SingletonList.getInstance().setArrayList(myListPlayers);
+
+            recyclerViewAdapter = new RecyclerViewAdapter(myListPlayers, getBaseContext());
             recyclerView.setLayoutManager(new LinearLayoutManager(this));
             recyclerView.setAdapter(recyclerViewAdapter);
 
@@ -147,7 +148,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (requestCode == PERMISSION_REQUEST) {
 
-            if (grantResults[0] == PackageManager.PERMISSION_GRANTED && grantResults[1] == PackageManager.PERMISSION_GRANTED) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED && grantResults[1] == PackageManager.PERMISSION_GRANTED) {
                 Bitmap b2 = BitmapFactory.decodeResource(getResources(), R.drawable.ashley_cole);
                 saveToExternalMemory(b2, "Ashley Cole");
                 Bitmap b1 = BitmapFactory.decodeResource(getResources(), R.drawable.adebayor);
@@ -300,7 +301,7 @@ public class MainActivity extends AppCompatActivity {
         if (requestCode == REQUEST_CODE) {
             if (resultCode == RESULT_OK) {
 
-                int number=data.getIntExtra("number",0);
+                int number = data.getIntExtra("number", 0);
 
                 if (data.getStringExtra(PlayersDetail.INTENT_TAG_PLAYER_NAME) != null) {
                     myListPlayers.get(number).setName(data.getStringExtra(PlayersDetail.INTENT_TAG_PLAYER_NAME));

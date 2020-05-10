@@ -28,15 +28,15 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     private List<Player> myPlayers;
     Context mContext;
     private static final int REQUEST_CODE = 1;
-    static final String EXTRA_IMAGE_TRANSITION_NAME="da";
-    static final String EXTRA_NAME_TRANSITION_NAME="ne";
-    static final String EXTRA_POSITION_TRANSITION_NAME="o";
+    static final String EXTRA_IMAGE_TRANSITION_NAME = "TRANSITION NAME";
+    static final String EXTRA_NAME_TRANSITION_NAME = "TRANSITION IMAGE";
+    static final String EXTRA_POSITION_TRANSITION_NAME = "TRANSITION POSITION";
+    public static int serialNumber;
 
 
-
-    public RecyclerViewAdapter(List<Player> myPlayers,Context context) {
+    public RecyclerViewAdapter(List<Player> myPlayers, Context context) {
         this.myPlayers = myPlayers;
-        mContext=context;
+        mContext = context;
 
     }
 
@@ -55,14 +55,15 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         viewHolder.playerName.setText(myPlayers.get(i).getName());
         viewHolder.playerPosition.setText(myPlayers.get(i).getPosition());
 
-        viewHolder.playerImage.setTransitionName("marko");
-        viewHolder.playerName.setTransitionName("steva");
-        viewHolder.playerPosition.setTransitionName("iva");
+        viewHolder.playerImage.setTransitionName(myPlayers.get(i).getName() + "image");
+        viewHolder.playerName.setTransitionName(myPlayers.get(i).getName() + "name");
+        viewHolder.playerPosition.setTransitionName(myPlayers.get(i).getName() + "position");
         BitmapFactory.Options bmOptions = new BitmapFactory.Options();
         Bitmap bitmap = BitmapFactory.decodeFile(myPlayers.get(i).getBitmapPath(), bmOptions);
         viewHolder.playerImage.setImageBitmap(bitmap);
 
     }
+
     @Override
     public int getItemCount() {
         return myPlayers.size();
@@ -90,31 +91,28 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         public void onClick(View v) {
 
 
-                Intent intent = new Intent(mContext, PlayersDetail.class);
-                intent.putExtra("player",myPlayers.get(getAdapterPosition()));
-                intent.putExtra("serial number",getAdapterPosition());
+            Intent intent = new Intent(mContext, PlayersDetail.class);
+
+            serialNumber = getAdapterPosition();
+
+            intent.putExtra(EXTRA_IMAGE_TRANSITION_NAME, ViewCompat.getTransitionName(playerImage));
+            intent.putExtra(EXTRA_NAME_TRANSITION_NAME, ViewCompat.getTransitionName(playerName));
+            intent.putExtra(EXTRA_POSITION_TRANSITION_NAME, ViewCompat.getTransitionName(playerPosition));
 
 
-                intent.putExtra(EXTRA_IMAGE_TRANSITION_NAME, ViewCompat.getTransitionName(playerImage));
-                intent.putExtra(EXTRA_NAME_TRANSITION_NAME, ViewCompat.getTransitionName(playerName));
-                intent.putExtra(EXTRA_POSITION_TRANSITION_NAME, ViewCompat.getTransitionName(playerPosition));
+            Pair[] pairs = new Pair[3];
+            pairs[0] = new Pair<View, String>(playerName, playerName.getTransitionName());
+            pairs[1] = new Pair<View, String>(playerPosition, playerPosition.getTransitionName());
+            pairs[2] = new Pair<View, String>(playerImage, playerImage.getTransitionName());
 
+            ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity) mContext, pairs);
 
-            Pair[]pairs=new Pair[3];
-            pairs[0]=new Pair<View, String>(playerName,playerName.getTransitionName());
-            pairs[1]=new Pair<View, String>(playerPosition,playerPosition.getTransitionName());
-            pairs[2]=new Pair<View, String>(playerImage,playerImage.getTransitionName());
-
-            ActivityOptions options= ActivityOptions.makeSceneTransitionAnimation((Activity)mContext,pairs);
-
-            ((Activity)mContext).startActivityForResult(intent,REQUEST_CODE, options.toBundle());
+            ((Activity) mContext).startActivityForResult(intent, REQUEST_CODE, options.toBundle());
 
         }
 
 
     }
-
-
 
 
 }
