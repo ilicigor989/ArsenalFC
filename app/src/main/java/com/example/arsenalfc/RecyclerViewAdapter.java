@@ -58,7 +58,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         viewHolder.playerImage.setTransitionName(myPlayers.get(i).getName() + "image");
         viewHolder.playerName.setTransitionName(myPlayers.get(i).getName() + "name");
         viewHolder.playerPosition.setTransitionName(myPlayers.get(i).getName() + "position");
+
         BitmapFactory.Options bmOptions = new BitmapFactory.Options();
+        bmOptions.inPreferredConfig = Bitmap.Config.RGB_565;
         Bitmap bitmap = BitmapFactory.decodeFile(myPlayers.get(i).getBitmapPath(), bmOptions);
         viewHolder.playerImage.setImageBitmap(bitmap);
 

@@ -135,8 +135,14 @@ public class MainActivity extends AppCompatActivity {
             SingletonList.getInstance().setArrayList(myListPlayers);
 
             recyclerViewAdapter = new RecyclerViewAdapter(myListPlayers, getBaseContext());
+
             recyclerView.setLayoutManager(new LinearLayoutManager(this));
             recyclerView.setAdapter(recyclerViewAdapter);
+
+            recyclerView.setHasFixedSize(true);
+            recyclerView.setItemViewCacheSize(15);
+
+
 
         }
 
@@ -230,6 +236,9 @@ public class MainActivity extends AppCompatActivity {
                 recyclerViewAdapter = new RecyclerViewAdapter(myListPlayers, getBaseContext());
                 recyclerView.setLayoutManager(new LinearLayoutManager(this));
                 recyclerView.setAdapter(recyclerViewAdapter);
+
+                recyclerView.setHasFixedSize(true);
+                recyclerView.setItemViewCacheSize(20);
 
 
             } else {
